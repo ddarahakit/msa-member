@@ -20,15 +20,7 @@ podTemplate(label: 'builder',
         }
         stage('Build') {
             container('gradle') {
-                sh "pwd"
-                sh "cd msa-member"
-                sh "gradle init"
-                sh "gradle build"
-                sh "pwd"
-                sh "ls"
-                sh "cd msa-member"
-                sh "pwd"
-                sh "ls"
+                sh "gradle -x test build"
             }
         }
         stage('Docker build') {

@@ -30,8 +30,7 @@ podTemplate(label: 'builder',
                     usernameVariable: 'USERNAME',
                     passwordVariable: 'PASSWORD')]) {
                         /* ./build/libs 생성된 jar파일을 도커파일을 활용하여 도커 빌드를 수행한다 */
-                        sh "cp /home/jenkins/agent/workspace/msa-member/msa-member/build/libs/msa-member-0.0.1-SNAPSHOT.jar ./build/libs/msa-member-0.0.1-SNAPSHOT.jar"
-                        sh "docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAGS} ./msa-member"
+                        sh "docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAGS} ."
                         sh "docker login -u ${USERNAME} -p ${PASSWORD}"
                         sh "docker push ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAGS}"
                 }

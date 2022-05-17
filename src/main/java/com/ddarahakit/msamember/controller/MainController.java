@@ -15,6 +15,6 @@ public class MainController {
     @GetMapping("/test")
     public String test(){
         memberService.test();
-        return "abcd";
+        return "test";
     }
 }

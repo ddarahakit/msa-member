@@ -59,11 +59,11 @@ podTemplate(label: 'builder',
                         /*sh "echo ${VERSION}"
                         sh "sed -i.bak 's#VERSION_STRING#${VERSION}#' ./k8s/k8s-deployment.yaml"*/
                         sh "echo ${DATE}"
-                        sh "sed -i.bak 's#DATE_STRING#${DATE}#' ./k8s/k8s-deployment-msa-member.yaml"
+                        sh "sed -i.bak 's#DATE_STRING#${DATE}#' ./k8s-deployment-msa-member.yaml"
 
                         /* yaml파일로 배포를 수행한다 */
-                        sh "kubectl apply -f ./k8s/k8s-deployment-msa-memberyaml -n ${NAMESPACE}"
-                        sh "kubectl apply -f ./k8s/k8s-service-msa-member.yaml -n ${NAMESPACE}"
+                        sh "kubectl apply -f ./k8s-deployment-msa-memberyaml -n ${NAMESPACE}"
+                        sh "kubectl apply -f ./k8s-service-msa-member.yaml -n ${NAMESPACE}"
                 }
             }
         }

@@ -9,6 +9,7 @@ spring:
     config:
       name: msa-member
       profile: dev
+      label: master
 
 management:
   endpoints:

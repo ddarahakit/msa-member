@@ -15,7 +15,6 @@ spec:
       containers:
         - name: msa-member
           image: ddarahakit/msa-member:0.1
-          command: ["/bin/sh", "-ec", "while :; do echo '.'; sleep 5 ; done"]
           ports:
             - containerPort: 8080
           imagePullPolicy: Always

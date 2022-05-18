@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+
+spring:
+  config:
+    import: "optional:configserver:http://msa-config-service.ns-project.svc.cluster.local:8081"
+  cloud:
+    config:
+      name: msa-member
+      profile: dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
